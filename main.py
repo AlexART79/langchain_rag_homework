@@ -26,12 +26,7 @@ def run_llm(query: str, chat_history: List[BaseMessage] = []):
     retrieval_chain = create_retrieval_chain(retriever=history_aware_retriever, combine_docs_chain=stuff_chain)
     response = retrieval_chain.invoke(input={"input": query, "chat_history": chat_history})
 
-    ret_val = {
-        "query": response["input"],
-        "result": response["answer"],
-        "source_documents": response["context"],
-    }
-    return ret_val
+    return response["answer"]
 
 if __name__ == "__main__":
 
@@ -44,9 +39,9 @@ if __name__ == "__main__":
         if query == 'exit':
             break
 
-        res = run_llm(query=query, chat_history=chat_history)
+        answer = run_llm(query=query, chat_history=chat_history)
 
-        print(res["result"])
+        print(answer)
 
         chat_history.append(HumanMessage(query))
-        chat_history.append(AIMessage(res["result"]))
+        chat_history.append(AIMessage(answer))
