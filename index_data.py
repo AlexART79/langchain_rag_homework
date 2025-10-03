@@ -55,9 +55,3 @@ retriever = Chroma(
     persist_directory=chroma_db_path,
     embedding_function=embedding_func,
 ).as_retriever(search_type="mmr", search_kwargs={"k": 5, "fetch_k": 50})
-
-
-if __name__ == "__main__":
-    resp = retriever.invoke("Who is the current UFC champion in heavyweight? Current date is 03 oct 2025")
-    for d in [doc.page_content for doc in resp]:
-        print(f"{d}\n\n")
