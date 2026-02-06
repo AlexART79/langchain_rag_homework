@@ -1,0 +1,302 @@
+
+
+About a client
+
+Automated Regulatory Dossier
+
+The Automated Regulatory Dossier R&D Project is designed to enhance and simplify the creation of regulatory dossiers by introducing a platform where users can upload Word document templates that include designated placeholders. Leveraging automated parsing capabilities, the system will accurately detect and list all unique placeholders within the uploaded templates, supporting streamlined document assembly and improved review processes.
+
+
+
+Business & Technical Context
+
+Business Challenges
+
+That were presented to us
+
+Manual document creation is time-consuming and error-prone
+
+Regulatory documents require consistent formatting and accurate data
+
+Multiple templates need to be processed with same placeholder values
+
+No centralized tool for batch document generation
+
+That we discovered along the way
+
+Word documents have complex internal structure with text split across runs
+
+Placeholder detection needs to handle various formatting scenarios
+
+CSV/XLSX import requires auto-detection of delimiters and encoding
+
+Session isolation needed for multi-user concurrent usage
+
+
+
+Business Goals
+
+Automate regulatory dossier creation process
+
+Reduce manual effort in document preparation
+
+Ensure consistency and accuracy in generated documents
+
+Provide intuitive interface for non-technical users
+
+
+
+
+
+
+
+Technical Limitations & Challenges
+
+Word document XML structure splits text across multiple runs
+
+Placeholder patterns need flexible regex matching
+
+Preserving document formatting during text replacement
+
+
+
+Existing tech stack
+
+N/A
+
+Existing architecture
+
+N/A
+
+Existing development, release and deployment processes or practices
+
+This is an accelerator without established release processes
+
+Docker Compose for local development and deployment
+
+Release management to be discussed upon project acceptance
+
+Accumulated technical debt
+
+Frontend documentation needs expansion
+
+End-to-end testing not yet implemented
+
+Production deployment configuration pending
+
+List of stakeholders
+
+TBD
+
+TBD
+
+TBD
+
+
+
+Solution
+
+Step-by-step story
+
+Discovery phase initiated to define requirements and technical approach
+
+POC development started with focus on core functionality: template upload, placeholder extraction, and document generation
+
+Team implemented session-based architecture for multi-user support
+
+Frontend built with modern React stack for intuitive user experience
+
+
+
+
+
+
+
+Discovery phase
+
+Staff engineer engagement
+
+Internal PM
+
+Architect
+
+Python Developer
+
+FE Team Lead (React)
+
+
+
+Proof of concepts
+
+Document processing library comparison (python-docx selected)
+
+Frontend framework evaluation (React + Vite selected)
+
+Database options (SQLite selected for simplicity in POC)
+
+Artifacts:
+
+Documentation
+
+Presentation
+
+E2E scenario demo
+
+
+
+Capgemini delivery and deliverables
+
+N/A
+
+
+
+Start/end of an engagement, phases (start, max (number of teams), end) along the way
+
+02.12.25 - 08.01.26
+
+Team composition
+
+Architect - Senko Yuri (allocation 25%)
+
+Python Developer - Artemov Alexander (allocation 100%)
+
+React Developer / Team Lead - Kuzava Oleh (allocation 100%)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Architecture
+
+
+
+Basic flows and interactions
+
+User creates a new session via the UI
+
+User uploads DOCX templates with placeholders ({{name}} or [[name]])
+
+System parses templates and extracts unique placeholders
+
+User fills placeholder values via UI or imports from XLSX/CSV
+
+System generates final documents with replaced values
+
+User downloads all generated documents as ZIP archive
+
+
+
+Artifacts
+
+Documentation
+
+Presentation
+
+Ownership & Responsibilities
+
+Role/Process/Component/Responsibility matrix
+
+Things owned by Capgemini (please explicitly mention development, testing, deployment, L3 support), e.g.:
+
+Development: Full backend and frontend implementation
+
+Testing: Unit tests for core functionality
+
+Deployment: Docker Compose configuration
+
+
+
+Responsibilities split between Capgemini and a client
+
+N/A
+
+CI/CD
+
+N/A
+
+Testing
+
+N/A
+
+Production
+
+N/A
+
+Delivery Process
+
+N/A
+
+Key technologies
+
+Python 3.13+
+
+FastAPI
+
+React 19
+
+TypeScript
+
+Docker
+
+SQLite
+
+Tailwind CSS
+
+
+
+Lessons learnt (technical, process or organizational)
+
+Public
+
+What was good
+
+Team successfully delivered end-to-end document processing workflow
+
+Modern tech stack enabled rapid development
+
+Team successfully demonstrated demo to stakeholders with great feedback
+
+What could be better
+
+Earlier alignment on all placeholder format requirements
+
+More comprehensive testing coverage from start
+
+
+
+Private
+
+What was good
+
+Team collaboration was effective
+
+Clear separation of frontend/backend responsibilities
+
+Good code quality and documentation practices
+
+
+
+Benefits (numbers are preferable).
+
+Time Savings (up to 88%): Automated placeholder extraction eliminates manual document analysis
+
+Error Reduction (up to 69%): Consistent placeholder replacement reduces human errors
+
+Scalability: Batch processing of multiple templates in single session
+
+User-Friendly: Intuitive drag-and-drop interface requires no technical expertise
+
+
+
+
+
