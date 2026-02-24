@@ -1,0 +1,336 @@
+ Case Study
+The Perfect Story
+<company logo>
+
+1.	About a client 
+Generic overview
+Client: Fictional global retailer “ApexWear Group” (multi brand, omnichannel).
+Context: Rapid growth created fragmented data estates across regions and brands. The client engaged Capgemini to deliver a zero disruption migration to a governed, analytics ready cloud platform supporting finance, supply chain, and digital commerce.
+
+
+2.	Business & Technical Context
+Business Challenges
+○	That were presented to us
+■	Market expansion
+■	Conquering a new market
+■	Unable to scale
+■	Business optimization
+■	Etc.
+
+Presented to us: The client sought to: expand into new markets without risking reporting outages; scale analytics to support seasonal spikes; optimize operational costs; and standardize compliance controls across regions.
+
+
+○	That we discovered along the way
+■	Stakeholders are not aligned
+■	Hit technology limitations
+■	Etc.
+
+Discovered along the way: Stakeholder priorities were not fully aligned; legacy platforms hit scale limits; lineage gaps complicated audits; and data ownership models varied by business unit.
+Business Goals
+○	That were presented to us
+■	TBD
+■	Etc.
+Presented to us: Ensure uninterrupted operations during migration; centralize trusted data for faster decisions; reduce run rate costs; and enforce consistent governance and PII policies across brands.
+TBD (to confirm with client): Target KPIs for time to insight, cost savings, and compliance SLAs.
+
+Technical Limitations & Challenges
+○	That were presented to us
+Presented to us: Mixed legacy RDBMS and file shares; inconsistent schemas; limited automation; ad hoc data quality checks.
+
+○	That we discovered along the way
+Discovered along the way: Hidden downstream dependencies; non standard ETL jobs; limited non prod environments for safe cutover rehearsals.
+
+○	Existing tech stack
+Existing tech stack: On prem RDBMS (SQL Server/Oracle), legacy ETL (cron + scripts), Excel driven reporting. (Illustrative; finalize in discovery)
+
+○	Existing architecture
+Existing architecture: Siloed per region; point to point feeds; minimal cataloging/lineage.
+
+○	Existing development, release and deployment processes or practices
+Existing dev/release/deploy: Manual scripts; no unified CI/CD; environment drift.
+
+○	Accumulated technical debt
+Accumulated tech debt: Duplicated transforms; hard coded credentials; missing tests.
+
+○	Limitations of technology/platform/cloud/etc. selection
+Platform limitations: Scale, observability, and governance gaps.
+
+○	TBD: List of stakeholders
+Stakeholders (TBD): CIO, Data Platform Owner, Business Unit Data Leads, Security & Compliance
+
+○	Etc.
+
+
+
+
+
+3.	Solution
+Step-by-step story
+Designed the target cloud architecture and provisioned landing zones as code to ensure scalable, policy driven foundations. 
+Ingested and centralized data from legacy sources into a unified data lake, establishing standardized layers for reliable access. 
+Standardized business models with modular transformations to serve finance, supply chain, and e commerce domains. 
+Enforced data quality and governance with automated tests, cataloging, lineage, and PII controls. 
+Automated CI/CD to consistently ship infrastructure, pipelines, and data models across environments. 
+Validated integrity through reconciliation and functional test suites prior to each staged cutover. 
+Strengthened security and observability with centralized logging, monitoring, secrets management, and role based access. 
+Enabled consumption by publishing curated, governed datasets for self service analytics and executive dashboards.
+
+What was proposed by a client vs. proposed by our side
+Client proposal: “Lift and shift” ETL jobs to the cloud with minimal change; manual verification post cutover. 
+Our proposal: Target state architecture with standardized lakehouse layers, automated testing/governance, and CI/CD to reduce risk and total cost while accelerating analytics.
+
+Discovery phase
+○	Staff engineer engagement
+Staff engineer engagement: Architecture assessment, dependency mapping, cutover strategy.
+○	Business analyst engagement
+Business analyst engagement: Domain taxonomy, KPI definitions, data product requirements.
+○	Etc. 
+Additional: data quality baseline, privacy impact screening, and success metrics workshop.
+
+Proof of concepts
+○	Tools comparison
+Tools comparison: Orchestration, storage formats, and quality frameworks against client constraints.
+
+○	Frameworks comparison
+Frameworks comparison: Transformation/workflow options versus maintainability and skill availability.
+○	Cloud services comparison
+Cloud services comparison: Security, governance, and cost characteristics for shortlisted services.
+
+○	Artifacts
+Artifacts: Assessment documents, architecture option deck, PoC readouts, and sign off emails.
+
+■	Documentation
+■	Presentation
+■	Email
+■	Etc. 
+Capgemini delivery and deliverables
+Engagement phases: Discovery → Foundation → Pilot domains → Industrialization → Rollout & Hypercare. 
+Key deliverables: Target architecture, IaC modules, ingestion pipelines, transformation layers, testing/governance setup, runbooks, and operating model.
+
+Start/end of an engagement, phases (start, max (number of teams), end) along the way
+Start/End: TBD. Phase cadence: time boxed increments with stage gates.
+Team size to start/overall max
+Team size: Start: TBD → Scale: TBD → Stabilize: TBD.
+Team composition
+Team composition: Architect(s), Data Engineers, QA/Data QA, DevOps, BA/PO, Security SME.
+Roles of the stakeholders and our dance partners
+Stakeholders & dance partners: Client CIO org, Data Platform Owner, Security/Compliance, BU Data Leads.
+
+
+4.	Architecture
+○	Architecture Diagrams, e.g. Component, Deployment, etc.
+Diagrams (to be produced): Component view (landing zone, ingestion, storage, transform, governance, consumption), Deployment view (environments, CI/CD), and Data flow (source → lake → model → BI).
+
+
+○	Basic flows and interactions
+Basic flows: Source systems → Ingestion pipelines → Bronze/Silver/Gold layers → Data quality checks → Catalog/lineage → BI/consumption.
+
+○	Artifacts
+Artifacts: Architecture Decision Records (ADRs), HLD/LLD documents, review decks, sign off emails.
+
+■	Documentation
+■	Presentation
+■	Email
+■	Etc. 
+
+5.	Ownership & Responsibilities
+Role/Process/Component/Responsibility matrix
+Things owned by Capgemini (please explicitly mention development, testing, deployment, L3 support), e.g.:
+○	End-to-end solution
+●	End to end solution architecture & IaC.
+
+○	Data processing pipeline or a part of it
+●	Data ingestion pipelines and parts of the transformation layer.
+
+○	Data warehouse or a part of it
+●	Data quality test suites; CI/CD setup; deployment orchestration.
+
+○	Mobile app(s)
+○	UI
+○	Testing 
+○	A few services (enumerate them)
+○	A few components, modules, etc. (enumerate them)
+○	Etc. 
+●	Operational runbooks and L3 support during hypercare.
+
+Responsibilities split between Capgemini and a client
+○	Architecture decisions
+●	Capgemini proposes; joint governance board approves.
+■	Design decisions
+○	Technology selection decisions
+●	Capgemini recommends; client signs off.
+
+○	Cloud-related decisions
+●	Client policies; Capgemini implements.
+
+○	Language selection decisions
+○	Libraries and frameworks selection decisions
+○	Testing 
+●	Capgemini implements automation; client participates in UAT/acceptance.
+
+○	DevOps practices and tools
+○	Data migration 
+●	Capgemini builds & runs; client provides SMEs and UAT.
+
+○	Release process
+●	Capgemini automates; client CAB approves.
+
+○	Etc. 
+
+6.	CI/CD
+○	CI/CD pipeline in details (any diagrams might help)
+Multi stage pipelines trigger IaC deployment, data factory artifacts, transformation code, and tests across Dev → Test → Prod.
+
+○	Artifact management
+Versioned templates, pipeline bundles, and model packages in a central registry/repo.
+
+○	Provisioning and configuration management
+Infrastructure as Code; environment specific variables and secrets from a centralized vault.
+
+○	Orchestration
+Declarative releases with approvals and automated rollbacks
+
+○	Deployment
+○	Artifacts
+Pipeline definitions, release notes, deployment checklists, and audit logs
+
+■	Documentation
+■	Presentation
+■	Email
+■	Etc. 
+
+7.	Testing
+Type of testing (manual, automation, functional, regression, etc.)
+Unit (transform logic), data quality (schema, nulls, referential integrity), integration, regression, smoke, and UAT.
+
+Code coverage
+Rules and dimensions coverage tracked; code coverage for transformations where applicable.
+
+Performance testing
+○	Load testing
+○	Stress testing
+○	Tools used
+○	Artifacts
+■	Report
+■	Presentation
+■	Email
+■	Etc. 
+Load and stress tests on ingestion/transform workloads; pipeline throughput benchmarks.
+
+Security testing
+○	Vulnerability testing
+Vulnerability scans, secrets scanning, access reviews; compliance checks aligned to client standards.
+
+○	Penetration testing
+○	Compliance with some standard
+○	Artifacts
+■	Report
+■	Presentation
+■	Etc. 
+Test plans, automated test reports, performance summaries, and security assessment reports.
+
+
+
+
+
+8.	Production
+○	Release procedure and release document 
+Gate controlled promotions; change tickets; automated pre /post deployment checks.
+
+○	Data migration
+Staged cutovers with dry runs and reconciliations; rollback plan defined.
+
+○	Logging
+Centralized logging, distributed tracing where applicable, platform metrics, and dashboards.
+
+○	Tracing
+○	Metrics
+○	Monitoring
+Alerting for SLIs/SLOs; documented L3 escalation; hypercare period post go live.
+
+○	Tools used
+○	L3 on-call support
+○	Etc. 
+Release runbooks, migration checklist, monitoring dashboards, and post release reviews.
+
+
+9.	Delivery Process
+○	Agile vs. Waterfall mindset 
+Agile, incremental delivery with clear stage gates for risk control.
+
+○	Scrum/Kanban/XP practices used
+■	Pair programming
+■	TDD
+Scrum/Kanban blend; backlog refinement; DOR/DOD defined; demos to stakeholders each sprint.
+
+○	Unique roles and practices used
+■	Cross team competency leads
+■	Tribe leaders
+■	Architects
+■	Etc.
+Architecture guild reviews; data product owners per domain; security champion embedded.
+
+○	Definition of Ready
+■	Formal
+■	Informal
+Acceptance criteria, lineage impact noted, test strategy outlined.
+
+○	Definition of Done
+■	Formal
+■	Informal
+Code merged, tests green, docs updated, governance registered, deployed to target env.
+
+○	Demo
+■	Frequency
+■	Stakeholders
+■	Artifacts
+○	Artifacts
+■	Documentation
+■	Presentation
+■	Email
+■	Etc.
+Sprint reviews, decision logs, demo recordings, stakeholder communications.
+
+
+10.	 Key technologies
+○	Languages (with versions)
+○	Main libraries and frameworks (with versions)
+○	Test libraries and frameworks (with versions)
+○	UI libraries and frameworks (with versions)
+○	Build tools
+○	CI/CD, provisioning and deployment tools (with versions)
+○	Cloud Services
+○	Load and performance testing 
+○	Security testing
+○	Unique things
+
+•	Architecture & IaC: Azure Landing Zone, Terraform
+•	Ingestion & Storage: Azure Data Factory, ADLS Gen2, Azure Databricks, Delta Lake
+•	Transformation & Modeling: dbt Core, Databricks SQL
+•	Quality & Governance: Great Expectations, Microsoft Purview
+•	CI/CD & Repo: Azure Repos, Azure DevOps Pipelines
+•	Testing: pytest (data tests), custom reconciliation jobs
+•	Security & Observability: Azure Monitor, Log Analytics, Key Vault, Entra ID
+•	Consumption: Power BI
+11.	 Lessons learnt (technical, process or organizational)
+○	Public
+■	What was good
+Early architecture/PoC alignment reduced rework; automation cut risks; governance embedded from day one improved trust.
+
+■	What could be better
+Stakeholder alignment needed earlier across brands; additional rehearsal cycles benefited complex cutovers.
+
+○	Private
+■	What was good
+Strong IaC patterns enabled fast environment parity; modular modeling eased domain onboarding.
+
+■	What could be better
+Improve discovery templates for hidden downstream dependencies; pre bake lineage rules per domain to speed cataloging
+
+
+12.	Benefits (numbers are preferable).
+50% Faster Time to Insight — governed, reusable datasets enable rapid decision making. 
+40% Lower TCO — automated pipelines and right sized compute/storage reduce run rate. 
+      35% Stronger Compliance — lineage, quality gates, and policy based access minimize risk.
+
+
